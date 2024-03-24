@@ -1,0 +1,426 @@
+@charset "UTF-8";
+
+body {
+	margin: 0px;
+}
+
+
+
+header {
+	background-color: #393B3F;
+}
+
+header div {
+	height: 50px;
+}
+
+#home {
+	font-size: 20px;
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	position: absolute;
+	top: 10px;
+	font-style: italic;
+
+
+}
+
+.header_bar_menu {
+
+	position: absolute;
+	right: 35px;
+	padding: 15px;
+}
+
+#header_bar img {
+	width: 100px;
+	height: 100%;
+
+}
+
+.header_bar_menu span {
+	margin: 10px;
+	border-left: 1px solid #444444;
+	border-right: 1px solid #444444;
+}
+
+#status {
+	float: right;
+	margin-right: 350px;
+	padding: 15px;
+	color: white;
+	font-size: 15px;
+}
+
+.status {
+	padding: 10px;
+
+}
+
+.header_bar_menu a {
+	color:gray;
+	font-size: 15px;
+	text-decoration: none;
+}
+
+.header_bar_menu a:hover {
+	color: white;
+}
+
+#header_menu {
+	background-color: #494B50;
+	height: 40px;
+}
+
+#header_menu>div {
+	padding-left: 20px;
+}
+
+.header_menu_menu {
+	border-left: 1px solid grey;
+	border-right: 1px solid grey;
+	float: left;
+	text-align: center;
+	padding: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	height: 20px;
+}
+
+.header_menu_menu:hover {
+	background-color: white;
+	color: black;
+	transition: background-color 0.5s, transform 0.5s;
+}
+
+#header_menu a {
+	text-decoration: none;
+	color: white;
+	
+}
+
+
+aside {
+	border-right: 1px solid #CCCCCC;
+	margin-top: 40px;
+	height: 1000px;
+	width: 15%;
+}
+
+#aside_logo {
+	text-align: center;
+	height: 100px;
+	padding-top: 10px;
+}
+
+#aside_logo img {
+	height: 70px;
+}
+
+#aside_logo+div {
+	margin-top: 20px;
+}
+
+
+.asidemenu {
+	padding-left: 0%;
+	background-color: #f6f6f6;
+	border-top: 1px solid #cfcfcf;
+	line-height: 2.8;
+	font-weight: bold;
+	vertical-align: middle;
+	text-align: center;
+	cursor: pointer;
+
+}
+
+dd {
+	padding: 20px;
+}
+
+dd>a {
+	cursor: pointer;
+}
+
+a:link,
+a:visited {
+	color: #454545;
+	text-decoration: underline;
+}
+
+dd:active a {
+	font-weight: 600;
+	color: #fa2828 !important;
+	background: #eeeeee !important;
+}
+main {
+	position: absolute;
+	left: 15%;
+	top: 90px;
+	width: 1400px;
+}
+
+#breadcrum {
+	border-bottom: 1px solid #E9E9E9;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: left;
+	height: 5vh;
+}
+
+#main_title {
+	margin-left: 40px;
+	margin-top: 40px;
+	color: #454545;
+	font-weight: bold;
+	height: 40px; padding-left: 10px; border-left : 6px solid #1A4E99;
+}
+
+
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+section.notice {
+  padding: 80px 0;
+}
+
+.page-title {
+  margin-bottom: 60px;
+}
+.page-title h3 {
+  font-size: 28px;
+  color: #333333;
+  font-weight: 400;
+  text-align: center;
+}
+
+#board-search .search-window {
+  padding: 15px 0;
+  background-color: #f9f7f9;
+}
+#board-search .search-window .search-wrap {
+  position: relative;
+/*   padding-right: 124px; */
+  margin: 0 auto;
+  width: 80%;
+  max-width: 564px;
+}
+#board-search .search-window .search-wrap input {
+  height: 40px;
+  width: 100%;
+  font-size: 14px;
+  padding: 7px 14px;
+  border: 1px solid #ccc;
+}
+#board-search .search-window .search-wrap input:focus {
+  border-color: #333;
+  outline: 0;
+  border-width: 1px;
+}
+#board-search .search-window .search-wrap .btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 108px;
+  padding: 0;
+  font-size: 16px;
+}
+
+.board-table {
+  font-size: 13px;
+  width: 100%;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.board-table a {
+  color: #333;
+  display: inline-block;
+  line-height: 1.4;
+  word-break: break-all;
+  vertical-align: middle;
+}
+.board-table a:hover {
+  text-decoration: underline;
+}
+.board-table th {
+  text-align: center;
+}
+
+.board-table .th-num {
+  width: 100px;
+  text-align: center;
+}
+
+.board-table .th-date {
+  width: 200px;
+}
+
+.board-table th, .board-table td {
+  padding: 14px 0;
+}
+
+.board-table tbody td {
+  border-top: 1px solid #e7e7e7;
+  text-align: center;
+}
+
+.board-table tbody th {
+  padding-left: 28px;
+  padding-right: 14px;
+  border-top: 1px solid #e7e7e7;
+  text-align: left;
+}
+
+.board-table tbody th p{
+  display: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0 30px;
+  font-size: 15px;
+  font-weight: 400;
+  background: transparent;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn-dark {
+  background: #555;
+  color: #fff;
+}
+
+.btn-dark:hover, .btn-dark:focus {
+  background: #373737;
+  border-color: #373737;
+  color: #fff;
+}
+
+.btn-dark {
+  background: #555;
+  color: #fff;
+}
+
+.btn-dark:hover, .btn-dark:focus {
+  background: #373737;
+  border-color: #373737;
+  color: #fff;
+}
+
+/* reset */
+
+* {
+  list-style: none;
+  text-decoration: none;
+}
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.container {
+  width: 1100px;
+  margin: 0 auto;
+}
+.blind {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+}
+
+
+#addalram{
+	position: absolute;
+	bottom: 50px;
+	left: 100px;
+	
+}
+
+
+.alarmList:hover{
+	background-color: #f8f8f8;
+	cursor: pointer;
+}
+footer {
+	border-top: 1px solid #aeaeae;
+}
+
+footer>div>div {
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+    .pagination-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pagination {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    .pagination li {
+        margin: 0 5px; /* Adjust the spacing between pagination items */
+    }
+
+    .current-page {
+        color: red;
+        /* Add any additional styles for the current page text */
+    }
+    
+    
+#addalram{
+	width: 80px;
+	background-color: #555;
+	color: white;
+	border: none;
+	cursor: pointer;
+	height: 30px;
+	
+}
+
+#addalram:hover{
+	
+	background-color: black;	
+}
+
+
+
+
+
+
+
+
+	

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="memberMapper">
+
+	
+	<select id="selectClubMembers" resultType="Member">
+		select user_no, nickname nickName, profile
+		from club_member
+			 join member using(user_no)
+		where club_no = #{ clubNo }
+	</select>
+	
+	<!--  -->
+	<!--  -->
+	<!--	성운님  -->
+	<!--  -->
+	<!--  -->
+	
+	<insert id="insertMember">
+		insert into member
+		values(member_seq.nextval, #{userName}, #{nickName}, #{userId}, #{userPwd}, #{email}, default, default, #{gender}, #{hobby}, sysdate, #{birthDate}, 'defaultProfile.png')
+	</insert>
+	
+	<select id="checkId" resultType="_int">
+		select count(*)
+		from member
+		where user_id = #{id} and status = 'Y'
+	</select>
+	
+	<select id="checkNick" resultType="_int">
+		select count(*)
+		from member
+		where nickname = #{nick} and status = 'Y'
+	</select>
+	
+	<select id="login" resultType="Member">
+		select *
+		from member
+		where user_id=#{userId} and status = 'Y'
+	</select>
+	
+	<select id="searchId" resultType="Member">
+		select *
+		from member
+		where user_Name = #{userName} and email = #{email} and status = 'Y'
+	</select>
+	
+	<select id="pwdId" resultType="Member">
+		select *
+		from member
+		where user_Name = #{userName} and email = #{email} and status = 'Y'
+	</select>
+	
+	<select id="checkPWD" resultType="_int">
+		select count(*)
+		from member
+		where user_id = #{userId} and email = #{email} and status = 'Y'
+	</select>
+	
+	<update id="updatePWD">
+		update member
+		set user_pwd = #{userPwd}
+		where user_id = #{userId} and status = 'Y'
+	</update>
+	
+	<!--  -->
+	<!--  -->
+	<!--	아림님  -->
+	<!--  -->
+	<!--  -->
+	
+	<select id="selectMylist" resultType="Member">
+	  	select *	
+	  	from member
+	  	where user_id = #{id} and status = 'Y'
+ 	</select>
+ 	
+ 	<select id="editMyInformation" resultType="Member">
+	  	select *	
+	  	from member
+	  	where user_id = #{id} and status = 'Y'
+ 	</select>
+ 	
+ 	<update id="updateMyInformation">
+	  	update member	
+	  	set profile = #{profile}, user_name=#{userName}, nickName=#{nickName}, email=#{email}
+	  	where user_id = #{ userId } and status = 'Y'
+ 	</update>
+ 	
+ 	<update id="updatePassword">
+	  	update member	
+	  	set user_pwd=#{userPwd}
+	  	where user_id = #{ userId } and status = 'Y'
+ 	</update>
+ 	
+ 	<update id="deleteMember">
+	 	update member
+	 	set status = 'N'
+	 	where user_id = #{ userId }
+ 	</update>
+ 	
+ 	<update id="updateUserProfile"  parameterType="Member">
+        update member
+        set PROFILE = #{profile}, NICKNAME = #{nickName}, USER_NAME = #{userName}, EMAIL = #{email}
+        WHERE USER_ID = #{userId}
+    </update>
+      
+    <select id="userClubList" resultType="Club">
+		select *
+		from club c
+		join club_member cm ON(c.club_no = cm.club_no)
+		where cm.user_no = #{ userNo } and status = 'Y'
+	</select>
+	
+	<select id="userCreateList" resultType="Club">
+		select *
+		from club
+		where club.creator = #{ userNo }
+	</select>
+	
+	<select id="noticeUser" resultType="Alarm">
+		select *
+	    from alarm
+<!--  	    	 join member using(user_no)
+	    where user_no = #{userNo}-->
+	</select>
+	
+	<select id="selectLikeList" resultType="Member">
+		SELECT
+		    ml.like_no,
+		    sender.user_id AS send_like_user_id,
+		    receiver.user_id AS receive_like_user_id
+		FROM member_like ml
+		JOIN member sender ON (ml.send_like_user = sender.user_no)
+		JOIN member receiver ON (ml.receive_like_user = receiver.user_no)
+		WHERE receiver.user_no = #{userNo}
+	</select>
+	
+	<select id="userReplyList" resultType="Reply">
+		SELECT
+		    m_writer.user_id AS writer_user_id,
+		    m_like.user_id AS like_user_id,
+		    club_name
+		FROM reply r
+		JOIN member m_writer ON (r.user_no = m_writer.user_no)
+		JOIN reply_like rl ON (r.reply_no = rl.reply_no)
+		JOIN member m_like ON (rl.send_like_user = m_like.user_no)
+		JOIN club using (club_no)
+		WHERE m_writer.user_no = #{userNo}
+	</select>
+	
+	<!--  -->
+	<!-- 선우님  -->
+	<!--  -->
+	
+	<select id="selectLatestMember" resultType="Member">
+		select *
+		from (select * from member order by CREATE_DATE desc)
+		where rownum <![CDATA[<=]]>5
+	</select>
+</mapper>

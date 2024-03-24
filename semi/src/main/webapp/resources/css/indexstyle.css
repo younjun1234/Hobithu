@@ -1,0 +1,199 @@
+@charset "UTF-8";
+
+body {
+	margin: 0px;
+}
+
+header {
+	background-color: #393B3F;
+}
+
+header div {
+	height: 50px;
+}
+
+#home {
+	font-size: 20px;
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	position: absolute;
+	top: 10px;
+	font-style: italic;
+
+
+}
+
+.header_bar_menu {
+
+	position: absolute;
+	right: 35px;
+	padding: 15px;
+}
+
+#header_bar img {
+	width: 100px;
+	height: 100%;
+
+}
+
+.header_bar_menu span {
+	margin: 10px;
+	border-left: 1px solid #444444;
+	border-right: 1px solid #444444;
+}
+
+#status {
+	float: right;
+	margin-right: 350px;
+	padding: 15px;
+	color: white;
+	font-size: 15px;
+}
+
+.status {
+	padding: 10px;
+
+}
+
+
+
+.header_bar_menu a:hover {
+	color: white;
+}
+
+#header_menu {
+	background-color: #494B50;
+	height: 40px;
+}
+
+#header_menu>div {
+	padding-left: 20px;
+}
+
+.header_menu_menu {
+	border-left: 1px solid grey;
+	border-right: 1px solid grey;
+	float: left;
+	text-align: center;
+	padding: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	height: 20px;
+}
+
+.header_menu_menu:hover {
+	background-color: white;
+	color: black;
+	transition: background-color 0.5s, transform 0.5s;
+}
+
+#header_menu a {
+	text-decoration: none;
+	color: white;
+}
+
+article {
+	margin: 70px;
+	
+}
+
+article div {
+	height: 30%;
+	width: 100%;
+
+}
+
+.section_title {
+	border-left: 5px solid #1A4E99;
+	color: #454545;
+	font-weight: bold;
+	padding-left: 10px;
+	font-size: 15px;
+}
+
+.barogagi{
+	float:right;
+	background-color: #333;
+	border: 1px solid #333;
+	color: white;
+	font-size: 12.5px;
+	line-height: 2;
+	text-decoration: none;
+	padding: 5px 5px;
+}
+article div section>div {
+	height: 250px;
+}
+
+#result {
+	max-height: 900px; /* Set a maximum height for the div */
+    height: 900px;
+    margin-bottom: 50px;
+    
+}
+
+
+
+
+
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+		border: 1px solid #aeaeae;
+	border-left: none;
+	border-right: none;
+
+}
+
+td,
+th {
+	border-bottom: 1px solid #E4E5E7;
+	text-align: center;
+}
+
+table th {
+	background-color: #f8f8f8;
+	padding: 8px 14px;
+	height: 23px;
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	line-height: 1.3em;
+	outline: 0;
+	font-weight: 600;
+}
+
+
+
+
+
+
+footer {
+	border-top: 1px solid #aeaeae;
+}
+
+footer>div>div {
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+
+
+
+#timedate {
+  font: small-caps lighter 43px/150% "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+  position: absolute;
+  top:0%;
+  left: 500px;
+  text-align:left;
+  width: 10%;
+  color: white;
+}
+
+
+

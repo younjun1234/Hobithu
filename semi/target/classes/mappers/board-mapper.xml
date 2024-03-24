@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="boardMapper">
+
+	<select id="getListCount" resultType="_int">
+		select count(*)
+		from club
+			 join club_category on (category_no = category_code)
+     		 join member on(user_no = creator)
+		where club.status = 'Y'
+		<if test="categoryClass != null">
+    		and category_class = #{ categoryClass }
+    	</if>
+    	<if test="clubName != ''">
+    		and club_name like '%${ clubName }%'
+    	</if>
+    	<if test="creatorName != ''">
+    		and nickname like '%${ creatorName }%'
+    	</if>
+    	<if test="clubSchedule != null">
+    		and to_char(club_schedule, 'yyyyMMdd') = to_char(#{club_schedule}, 'yyyyMMdd')
+    	</if>
+    	<if test="addr != null">
+    		and addr like '%${ addr }%'
+    	</if>
+	</select>
+	
+	<select id="selectBoardList" resultType="Club">
+		select club.*, nickname "creator_name", category_name, category_class
+    	from club
+    		 join member on(user_no = creator)
+    		 join club_category on (category_no = category_code)
+    	where club.status = 'Y'
+    	<if test="categoryClass != null">
+    		and category_class = #{ categoryClass }
+    	</if>
+    	<if test="clubName != ''">
+    		and club_name like '%${ clubName }%'
+    	</if>
+    	<if test="creatorName != ''">
+    		and nickname like '%${ creatorName }%'
+    	</if>
+    	<if test="clubSchedule != null">
+    		and to_char(club_schedule, 'yyyyMMdd') = to_char(#{club_schedule}, 'yyyyMMdd')
+    	</if>
+    	<if test="addr != null">
+    		and addr like '%${ addr }%'
+    	</if>
+    	order by club_schedule desc
+	</select>
+	
+	<select id="selectHomeList" resultType="Club">
+		select * from
+		(select club.*, nickname "creator_name", category_name, category_class
+				from club
+					 join member on(user_no = creator)
+					 join club_category on (category_no = category_code)
+				where club.status = 'Y'
+				order by club_no desc)
+		where rownum <![CDATA[<]]>= 6
+	</select>
+	
+	<select id="selectCategoryCode" resultType="_int">
+		select category_no
+		from club_category
+		where category_name = #{categoryName}
+	</select>
+	
+	<insert id="insertClub">
+		insert into club
+		values (club_seq.nextval, #{clubName}, sysdate, #{clubSchedule}, #{content}, #{onlineYN}, #{backgroundImage}, #{clubAccess}, 
+				#{clubCapacity}, #{selectGender}, #{categoryCode}, #{paymentYN}, #{ageRange}, #{creator}, #{addr}, 'Y')
+	</insert>
+	
+	<insert id="insertCreator">
+		insert into club_member
+		values (#{ creator }, club_seq.currval)
+	</insert>
+	
+	<select id="viewBoard" resultType="Club">
+		select * 
+		from club
+		where club_no = #{clubNo}
+	</select>
+	
+	<update id="deleteClub">
+		update club
+		set status = 'N'
+		where club_no = #{clubNo}
+	</update>
+	
+	<insert id="joinClub">
+		insert into club_member
+		values (#{loginUser.userNo},#{clubNo})
+	</insert>
+	
+	<update id="updateClubSchedule">
+		update club
+		set status = 'N'
+		where club_schedule <![CDATA[<]]> sysdate
+	</update>
+	
+	<update id="leaveClub">
+		delete from club_member
+		where club_no = #{ clubNo } and user_no = #{ loginUser.userNo }
+	</update>
+	
+	<!-- 선우님 -->
+	
+	<select id="selectLatestClub" resultType="Club">
+		select *
+		from (select club.*, category_name, category_class from club 
+			  join club_category on (category_no = category_code) 
+			  order by CLUB_CREATE_DATE desc)
+		where rownum <![CDATA[<=]]>5
+	</select>
+	
+	<select id="adminBoardList" resultType="Club">
+		select *
+		from (select club.*, category_name, category_class from club 
+			  join club_category on (category_no = category_code)
+			  <if test="categoryName != null">
+				  where category_name = #{ categoryName }
+			  </if>
+			  order by CLUB_CREATE_DATE desc)
+		
+		order by club_no desc
+	</select>
+	
+	<select id="adminCategory" resultType="Club">
+		select category_name
+		from club_category
+		where category_class = #{categoryClass}
+	</select>
+	
+	
+</mapper>

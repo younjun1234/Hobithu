@@ -1,0 +1,201 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+	}
+
+* {
+    font-family: 'Pretendard-Regular';
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    border-collapse: collapse;
+    margin: 0px;
+    padding: 0px;
+	}
+
+/* header start */
+	.header {
+	    display: flex;
+	    width: 1280px;
+	    height: 86px;
+	    margin: auto;
+	}
+	
+	.nav_bar {
+	    margin-top: 31px;
+	    width: 1100px;
+	}
+	
+	.nav_bar > ul {
+	    display: flex;
+	}
+	
+	.header a {
+	    color: #000;
+	}
+	
+	.nav_bar li {
+	    margin-right: 100px;
+	    font-weight: bold;
+	    font-size: 20px;
+	}
+	.profile {
+	    line-height: 86px;
+	    font-size: 20px;
+	    font-weight: bold;
+	    margin-right: 20px;
+	    width: 100px;
+	}
+	.login {
+	    width: 20px;
+	    line-height: 86px;
+	    font-size: 20px;
+	    font-weight: bold;
+	    text-align: right;
+	    width: 100px;
+	}
+	
+/* header end */
+
+#border{
+	position: relative;
+    top: 200px;
+    left: 32%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.1),
+    0 10px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    max-width:100%;
+    min-width: 480px;
+    margin-bottom: 0%;
+}
+#myProfile{
+	border-radius: 50%; 
+	width: 180px; 
+	height: 180px;
+	
+}
+
+#changePro{
+	position: relative;
+	left: 200px;
+	top: 80px;
+	border: 1px solid #ddd;
+	border-radius: 50%; 
+	width: 180px; 
+	height: 180px;
+	background-size: cover;
+	background-position: center;
+	background-image: cover;
+}
+#edit{
+	position: relative;
+	top: 50px;
+	text-align: center;
+}
+
+.changeList{
+	position: relative;
+	text-align: center;
+	top: 180px;
+	
+	padding: 10px;
+    width : 400px;
+    height: 45px;
+    margin: 2%;
+    margin-top: 0.5%;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+#file {
+  display: none;
+}
+
+#textId{
+	position: absolute;
+	top: 385px;
+	left: 20%;
+}
+#textName{
+	position: absolute;
+	top: 485px;
+	left: 20%;
+}
+#textGender{
+	position: absolute;
+	top: 585px;
+	left: 20%;
+}
+#textNickName{
+	position: absolute;
+	top: 685px;
+	left: 20%;
+}
+#textEmail{
+	position: absolute;
+	top: 800px;
+	left: 20%;
+}
+#email{
+	position: relative;
+	text-align: center;
+	top: 195px;
+	left: -25px;
+	padding: 10px;
+    width : 350px;
+    height: 45px;
+    margin: 2%;
+    margin-top: 0.5%;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+#email_check{
+	position: relative;
+	text-align: center;
+	bottom: -185px;
+	left: 25px;
+	
+	padding: 10px;
+    width : 400px;
+    height: 45px;
+    margin: 2%;
+    margin-top: 0.5%;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: #fff;
+   
+}
+#email_check_btn{
+	position: relative;
+	width: 50px;
+	height: 35px;
+	bottom: -130px;
+	left: -30px;
+	background-color: #2450a2;
+	color: white;
+}
+#submit{
+	width: 100px; 
+	height: 50px;
+    background-color: #2450a2;
+    color: white;
+    border: 0px;
+    border-radius: 4%;
+    position: absolute;
+	bottom: 40px;
+	left: 42%;
+}

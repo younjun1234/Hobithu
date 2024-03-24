@@ -1,0 +1,252 @@
+@charset "UTF-8";
+	.row {
+		position: relative;
+	}
+	.row::before {
+		content: "";
+		position: absolute;
+		left: 150px; /* 세로줄을 왼쪽으로 이동 */
+		top: 20px;
+		bottom: -50px;
+		width: 1px; /* 세로줄의 너비 조절 */
+		background-color: black;
+	}
+	@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+	}
+
+	* {
+	    font-family: 'Pretendard-Regular';
+	    list-style: none;
+	    text-decoration: none;
+	    color: black;
+	    border-collapse: collapse;
+	    margin: 0px;
+	    padding: 0px;
+	}
+	
+	.wrap {
+	    background: #fff;
+	}
+	
+	/* header start */
+	.header {
+	    display: flex;
+	    width: 1280px;
+	    height: 86px;
+	    margin: auto;
+	}
+	
+	.nav_bar {
+	    margin-top: 31px;
+	    width: 1100px;
+	}
+	
+	.nav_bar > ul {
+	    display: flex;
+	}
+	
+	.header a {
+	    color: #000;
+	}
+	
+	.nav_bar li {
+	    margin-right: 100px;
+	    font-weight: bold;
+	    font-size: 20px;
+	}
+	
+	.bell {
+		position:relative;
+		top: 25px;
+	    margin-right: 20px;
+	    width: 100px;
+	    cursor: pointer;
+	}
+	
+	.login {
+	    width: 20px;
+	    line-height: 86px;
+	    font-size: 20px;
+	    font-weight: bold;
+	    text-align: right;
+	    width: 100px;
+	}
+	
+	/* header end */
+	
+	#bell_screen{
+        position: absolute;
+        right: 300px;
+        top: 7%; /* 원하는 위치로 조절하세요 */
+        border: 1px solid black;
+        width: 550px;
+        height: 70%;
+        display: none;
+        background-color: white;
+        border-radius: 10px;
+        z-index: 100;
+    }
+    #bellSquare {
+	   position: relative; 
+	    top: 15px; 
+	    left: 50px;
+	    width: 450px; 
+	    height: 100px; 
+	    border-radius: 10px; 
+	    box-align: right;
+	    text-align:center;
+	    background-color: lightgrey;
+	}
+    
+	#profile{
+		background-size: cover;
+		background-position: center;
+		position: relative;
+		left: 200px;
+		top: -20px;
+		width: 250px; 
+		height: 250px; 
+		border-radius: 50%; 
+		margin: 15px;
+	}
+	a{
+		text-decoration: none;
+		color: black;
+	}
+	.line{
+		background-color: white;
+		position: absolute;
+		left: 25px;
+	}
+	#nameEdit:hover{
+		background-color: lightgray;
+		background-position: 10%;
+		width: 120px;
+		border-radius: 5px;
+		position: relative;
+		left: 3px;
+	}
+	#pwdEdit:hover{
+		background-color: lightgray;
+		background-position: 10%;
+		width: 120px;
+		border-radius: 5px;
+		position: relative;
+		left: 3px;
+	}
+	#nickname{
+		font-size: 12px;
+		position: relative;
+		top: -40px;
+		left: 200px;
+	}
+	#postBoard{
+		position: relative;
+		left: 200px;
+		bottom: -50px;
+		border: 1px solid grey; 
+		width: 750px; 
+		height: 700px; 
+		border-radius: 16px; 
+		background-color: white;
+	}
+	#notiBoard{
+		position: relative;
+		left: 200px;
+		bottom: -50px;
+		border: 1px solid grey; 
+		width: 750px; 
+		height: 700px; 
+		border-radius: 16px; 
+		background-color: white;
+		display: none;
+	}
+	#likeBoard{
+		position: relative;
+		left: 200px;
+		bottom: -50px;
+		border: 1px solid grey; 
+		width: 750px; 
+		height: 700px; 
+		border-radius: 16px; 
+		background-color: white;
+		display: none;
+	}
+	
+	#squareBack{
+		position: relative;
+		bottom: 20px;
+		width: 500px; 
+		height: 100px; 
+		border-radius: 20px; 
+		margin: auto; 
+		background-color: lightgrey;
+	}
+	#square{
+		position: relative;
+	    top: 15px; 
+	    left: 50px;
+	    width: 300px; 
+	    height: 100px; 
+	    border-radius: 10px; 
+	    box-align: right;
+    	margin: 10px;
+	}
+	#clubInfo{
+		position: relative;
+		left: 65px;
+		margin: 20px;
+	}
+	#likeInfo{
+		position: relative;
+		bottom: 80px;
+		left: 65px;
+		margin: 20px;
+	}
+	div>img{
+		width: 70px; 
+		height: 70px; 
+		border-radius: 10px;
+	}
+	#saygoodbye{
+		background-color: white;
+		position: relative;
+		bottom: -30px;
+		left: 30px;
+		cursor: pointer;
+	}
+	#saygoodbye:hover{
+		background-color: lightgray;
+		background-position: 10%;
+		width: 120px;
+		border-radius: 5px;
+		position: relative;
+		left: 27px;
+	}
+	#action{
+		position: relative; 
+		left: 200px; 
+		top: 30px;
+	}
+    #게시물, #모임, #좋아요 {
+    	position: relative;
+    	bottom: 30px;
+    	left: 100px;
+        font-size: 20px;
+        cursor: pointer; 
+        margin: 20px;
+        padding-right: 150px;
+    }
+	#backgroundImage{
+	  	position: absolute;
+	  	z-index: -1;
+	    opacity: 0.5;
+	  	top: 0;
+	  	left: 0;
+	    width: 100%; /* 원하는 가로 크기로 수정 */
+	    height: 100%; /* 원하는 세로 크기로 수정 */
+	}

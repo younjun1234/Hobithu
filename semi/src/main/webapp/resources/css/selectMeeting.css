@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+.wrap {
+	height: 100vh;
+}
+/* content start */
+.content {
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+/* back/next button */
+.btn_cont {
+    width: 1280px;
+    height: 40px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.btn_cont > div  {
+	display: flex;
+	font-size: 26px;
+    cursor: pointer;
+    line-height: 40px;
+}
+
+.btn_cont img {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.btn_cont > a > div {
+    display: flex;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.btn_cont > a > div > div {
+    line-height: 40px;
+}
+
+/* content start */
+.content_text {
+    margin: auto;
+    width: 500px;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.content_box {
+    width: 500px;
+    height: 50px;
+    margin: auto;
+    margin-top: 20px;
+    text-align: left;
+    margin-bottom: 20px;
+
+}
+
+
+.content_box input[type=radio]{
+    display: none;
+}
+.content_box input[type=radio]+label{
+    display: inline-block;
+    cursor: pointer;
+    height: 40px;
+    width: 200px;
+    border: 1px solid #4D4DF4;
+    background: #fff;
+    line-height: 40px;
+    text-align: center;
+    font-weight:bold;
+    font-size:22px;
+    color: #4D4DF4;
+    border-radius: 5px;
+}
+.content_box input[type=radio]:checked+label{
+	background: #4D4DF4;
+    border: 1px solid #4D4DF4;
+    color: #fff;
+}
+
+.auth_type {
+    width: 400px;
+    height: 90px;
+    margin-bottom: 20px;
+    display: flex;
+    border-radius: 5px;
+    background: #fff;
+    border: 1px solid #4D4DF4;
+    cursor: pointer;
+}
+
+.auth_type > img {
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    margin-left: 10px;
+    margin-top: 30px;
+}
+
+.auth_type > div {
+    margin: 10px;
+}
+
+.auth_type_content {
+    display: block;
+    font-size: 14px;
+}
+
+.clicked {
+    background: #4D4DF4;
+    color: #f4f4f4;
+}
